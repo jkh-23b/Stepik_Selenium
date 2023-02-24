@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import Select
 
 
 driver = webdriver.Chrome()
-driver.maximize_window()
+
 driver.get("https://suninjuly.github.io/selects2.html")
 time.sleep(1)
 

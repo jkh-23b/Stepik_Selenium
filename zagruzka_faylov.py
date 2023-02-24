@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 import os
 
 driver = webdriver.Chrome()
-driver.maximize_window()
+
 driver.get("https://suninjuly.github.io/file_input.html")
 time.sleep(1)
 
@@ -16,7 +16,8 @@ try:
 
 
     current_dir = os.path.abspath(os.path.dirname(__file__))
-    file_path = os.path.join(current_dir, 'test_selenium.txt')
+    print(current_dir)
+    file_path = os.path.join(current_dir, 'Explicit_waits.py')
     driver.find_element(By.ID, "file").send_keys(file_path)
 
     driver.find_element(By.CSS_SELECTOR, "[type='submit']").click()
