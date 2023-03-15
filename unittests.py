@@ -4,7 +4,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 driver = webdriver.Chrome()
-driver.maximize_window()
 driver.implicitly_wait(3)
 
 class test_class_name(unittest.TestCase):
