@@ -10,13 +10,17 @@ class test_class_name(unittest.TestCase):
     def test_1(self):
         driver.get("https://suninjuly.github.io/registration1.html")
 
-        driver.find_element(By.CSS_SELECTOR, ".first_block input.first").send_keys("Jasur")
+        driver.find_element(By.CSS_SELECTOR, "[type='text'].first").send_keys("Jasur")
+
+
         driver.find_element(By.CSS_SELECTOR, ".first_block input.second").send_keys("Khabibullaev")
         driver.find_element(By.CSS_SELECTOR, "[type='text'].third").send_keys("test@gmail.com")
-        driver.find_element(By.CSS_SELECTOR, ".second_block input.first").send_keys("+998991234567")
-        driver.find_element(By.CSS_SELECTOR, ".second_block input.second").send_keys("Uzbekistan")
-        driver.find_element(By.CSS_SELECTOR, "[type='submit']").click()
-        time.sleep(1)
+        driver.find_element(By.CSS_SELECTOR, ".second_block input.first").send_keys("+998991122233")
+        driver.find_element(By.CSS_SELECTOR, ".second_block input.second").send_keys("Tashkent")
+        button = driver.find_element(By.CSS_SELECTOR, "button.btn")
+        button.click()
+
+        time.sleep(2)
 
         text_welc = driver.find_element(By.TAG_NAME, "h1").text
         needed_text = "Congratulations! You have successfully registered!"
@@ -27,12 +31,12 @@ class test_class_name(unittest.TestCase):
         driver.get("https://suninjuly.github.io/registration2.html")
         time.sleep(1)
 
-        driver.find_element(By.CSS_SELECTOR, ".first_block input.first").send_keys("Jasur")
-        driver.find_element(By.CSS_SELECTOR, ".first_block input.third").send_keys("testt@gmail.com")
-        driver.find_element(By.CSS_SELECTOR, ".second_block input.first").send_keys("+998991112233")
-        driver.find_element(By.CSS_SELECTOR, ".second_block input.second").send_keys("Uzbekistan")
-        driver.find_element(By.CSS_SELECTOR, "[type='submit']").click()
-        time.sleep(1)
+        driver.find_element(By.CSS_SELECTOR, ".first_block input.second").send_keys("Khabibullaev")
+        driver.find_element(By.CSS_SELECTOR, "[type='text'].third").send_keys("test@gmail.com")
+        driver.find_element(By.CSS_SELECTOR, ".second_block input.first").send_keys("+998991122233")
+        driver.find_element(By.CSS_SELECTOR, ".second_block input.second").send_keys("Tashkent")
+        button = driver.find_element(By.CSS_SELECTOR, "button.btn")
+        button.click()
 
         text_welc2 = driver.find_element(By.TAG_NAME, "h1").text
         needed_text2 = "Congratulations! You have successfully registered!"
@@ -40,6 +44,6 @@ class test_class_name(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-    print("All passed")
+    
 
 
