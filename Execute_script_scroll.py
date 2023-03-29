@@ -1,8 +1,10 @@
 import time
+import os
 import math
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+print(os.path.abspath(os.path.dirname(__file__)))
 driver = webdriver.Chrome()
 driver.get("https://suninjuly.github.io/execute_script.html")
 time.sleep(1)
