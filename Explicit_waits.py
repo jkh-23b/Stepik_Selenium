@@ -16,9 +16,9 @@ try:
 
 
     driver.execute_script("window.scrollBy(0, 100);")
-    book = driver.find_element(By.CSS_SELECTOR, "[onclick='checkPrice();'")
+    book = driver.find_element(By.CSS_SELECTOR, "[onclick='checkPrice();']")
     book.click()
-    time.sleep(2)
+
 
     def calc(x):
         return str(math.log(abs(12 * math.sin(int(x)))))
