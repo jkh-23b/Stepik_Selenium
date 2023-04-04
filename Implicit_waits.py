@@ -10,4 +10,5 @@ button = driver.find_element(By.ID, "verify")
 button.click()
 
 message = driver.find_element(By.ID, "verify_message")
+print(message)
 assert "successful" in message.text
