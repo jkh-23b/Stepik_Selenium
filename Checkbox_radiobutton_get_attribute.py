@@ -29,12 +29,6 @@ try:
     driver.find_element(By.CSS_SELECTOR, "button.btn-default").click()
     time.sleep(3)
 
-
-
-
-
-
-
 finally:
     time.sleep(2)
     driver.quit()
