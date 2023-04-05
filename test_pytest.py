@@ -1,42 +1,27 @@
-import pytest
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
 
-driver = webdriver.Chrome()
+def registration(link):
+    try:
+        driver = webdriver.Chrome()
+        driver.get(link)
+        driver.implicitly_wait(2)
 
-def Test_pytest1():
-    driver.get("https://suninjuly.github.io/registration1.html")
-    time.sleep(2)
+        driver.find_element(By.CSS_SELECTOR, ".first_block .first").send_keys("Jasur")
+        driver.find_element(By.CSS_SELECTOR, ".first_block .second").send_keys("Khabibullaev")
+        driver.find_element(By.CSS_SELECTOR, ".third_class .third").send_keys("test@gmail.com")
+        driver.find_element(By.CSS_SELECTOR, "button.btn").click()
+        w_text = driver.find_element(By.TAG_NAME, "h1")
+        text_ = w_text.text
+        return text_
+    except:
+        driver.quit()
 
-    driver.find_element(By.CSS_SELECTOR, "[type='text'].first").send_keys("Jasur")
-    driver.find_element(By.CSS_SELECTOR, ".first_block input.second").send_keys("Khabibullaev")
-    driver.find_element(By.CSS_SELECTOR, "[type='text'].third").send_keys("test@gmail.com")
-    driver.find_element(By.CSS_SELECTOR, ".second_block input.first").send_keys("+998991122233")
-    driver.find_element(By.CSS_SELECTOR, ".second_block input.second").send_keys("Tashkent")
-    button = driver.find_element(By.CSS_SELECTOR, "button.btn")
-    button.click()
+def test_link1():
+    link = "http://suninjuly.github.io/registration1.html"
+    assert registration(link) == "Congratulations! You have successfully registered!", "Test just Failed"
 
-    time.sleep(1)
-    text_welc = driver.find_element(By.TAG_NAME, "h1").text
-    needed_text = "Congratulations! You have successfully registered!"
-    assert text_welc == needed_text
-
-def test_2():
-    driver.get("https://suninjuly.github.io/registration2.html")
-    time.sleep(2)
-
-    driver.find_element(By.CSS_SELECTOR, ".first_block input.second").send_keys("Khabibullaev")
-    driver.find_element(By.CSS_SELECTOR, "[type='text'].third").send_keys("test@gmail.com")
-    driver.find_element(By.CSS_SELECTOR, ".second_block input.first").send_keys("+998991122233")
-    driver.find_element(By.CSS_SELECTOR, ".second_block input.second").send_keys("Tashkent")
-    button = driver.find_element(By.CSS_SELECTOR, "button.btn")
-    button.click()
-    time.sleep(1)
-
-    text_welc2 = driver.find_element(By.TAG_NAME, "h1").text
-    needed_text2 = "Congratulations! You have successfully registered!"
-    assert text_welc2 == needed_text2
-
-if __name__ == "__main__":
-    pytest.main()
+def test_link2():
+    link = "http://suninjuly.github.io/registration2.html"
+    assert registration(link) == "Congratulations! You have successfully registered!", "Test jurt Failed"
