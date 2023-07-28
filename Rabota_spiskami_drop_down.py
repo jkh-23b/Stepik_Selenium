@@ -7,7 +7,7 @@ from selenium.webdriver.support.ui import Select
 
 driver = webdriver.Chrome()
 
-driver.get("https://suninjuly.github.io/selects2.html")
+driver.get("http://suninjuly.github.io/selects1.html")
 time.sleep(1)
 
 def sums(x, y):
